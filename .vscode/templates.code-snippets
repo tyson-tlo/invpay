@@ -10,6 +10,9 @@
 			"@endsection",
 
 			"\n@section('content')",
+				"<div class=\"container\">",
+
+				"@include('components.alerts.pack')",
 				"\t<div class=\"card mt-3\">",
 					"\t\t<div class=\"card-body\">",
 						"\t\t\t<div class=\"row\">",
@@ -32,6 +35,7 @@
 						"\t\t</div>",
 						"\t\t<hr>",
 					"\t</div>",
+				"\t</div>",
 				"</div>",
 			"@endsection"
 		],

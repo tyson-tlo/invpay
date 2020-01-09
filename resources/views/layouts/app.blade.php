@@ -21,18 +21,21 @@
 </head>
 <body>
     <div id="app">
-        @include('common.navbar-top')
-
-
+        @auth
+            @include('common.navbar-top')
+        @endauth 
+        
         <main class="py-4">
             <div class="container-fluid">
                 {{-- Breadcrumbs --}}
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                        @yield('breadcrumbs')
-                    </ol>                  
-                </nav>
+                @auth
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                            @yield('breadcrumbs')
+                        </ol>                  
+                    </nav>
+                @endauth                
                 @yield('content')
             </div>            
         </main>
