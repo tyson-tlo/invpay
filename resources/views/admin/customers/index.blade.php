@@ -9,7 +9,6 @@
 <div class="container">
 
 @include('components.alerts.pack')
-
     <div class="card mt-3">
         <div class="card-body">
             <div class="row">
@@ -23,7 +22,7 @@
                             Options <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Option 1</a>
+                            <a class="dropdown-item" href="{{ route('admin.customers.create') }}">Create Customer</a>
                             {{-- Add more links here --}}
                         </div>
                     </li>
@@ -44,8 +43,8 @@
                         <td>{{ $customer->name }}</td>
                         <td>
                             <div class="btn-group">
-                                <a href="#" class="btn btn-primary">View</a>
-                                <a href="#" class="btn btn-warning">Edit</a>
+                                <a href="{{ route('admin.customers.show', $customer->id) }}" class="btn btn-sm btn-primary">View</a>
+                                <a href="{{ route('admin.customers.edit', $customer->id) }}" class="btn btn-sm btn-warning">Edit</a>
                             </div>
                         </td>
                     </tr>
