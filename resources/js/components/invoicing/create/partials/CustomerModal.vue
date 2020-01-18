@@ -41,7 +41,7 @@
             },
             getCustomer(id) {
                 axios.get('/admin/customers/data/show/' + id).then(response => {
-                    console.log(response.data.customer)
+                    $('#customersModal').modal('toggle')
                     this.$emit('customerSelected', response.data.customer)
                 })
             }
